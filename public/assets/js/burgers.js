@@ -5,18 +5,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // UPDATE
-  const changeSleepBtns = document.querySelectorAll('.change-sleep');
+  const changeDevourBtns = document.querySelectorAll('.change-devour');
 
   // Set up the event listener for the create button
-  if (changeSleepBtns) {
-    changeSleepBtns.forEach((button) => {
+  if (changeDevourBtns) {
+    changeDevourBtns.forEach((button) => {
       button.addEventListener('click', (e) => {
         // Grabs the id of the element that goes by the name, "id"
         const id = e.target.getAttribute('data-id');
-        const newSleep = e.target.getAttribute('data-newsleep');
+        const newDevour = e.target.getAttribute('data-newdevour');
 
-        const newSleepState = {
-          sleepy: newSleep,
+        const newDevourState = {
+          devour: newDevour,
         };
 
         fetch(`/api/burgers/${id}`, {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           },
 
           // make sure to serialize the JSON body
-          body: JSON.stringify(newSleepState),
+          body: JSON.stringify(newDevourState),
         }).then((response) => {
           // Check that the response is all good
           // Reload the page so the user can see the new quote
@@ -43,16 +43,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // CREATE
-  const createCatBtn = document.getElementById('create-form');
+  const createBurgerBtn = document.getElementById('create-form');
 
-  if (createCatBtn) {
-    createCatBtn.addEventListener('submit', (e) => {
+  if (createBurgerBtn) {
+    createBurgerBtn.addEventListener('submit', (e) => {
       e.preventDefault();
 
       // Grabs the value of the textarea that goes by the name, "quote"
-      const newCat = {
+      const newBurger = {
         name: document.getElementById('ca').value.trim(),
-        sleepy: document.getElementById('sleepy').checked,
+        devour: document.getElementById('devoured').checked,
       };
 
       // Send POST request to create a new quote
@@ -77,10 +77,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // DELETE
-  const deleteCatBtns = document.querySelectorAll('.delete-burger');
+  const deleteBurgerBtns = document.querySelectorAll('.delete-burger');
 
   // Set up the event listeners for each delete button
-  deleteCatBtns.forEach((button) => {
+  deleteBurgerBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
       const id = e.target.getAttribute('data-id');
 
