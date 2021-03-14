@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
           body: JSON.stringify(newDevourState),
         }).then((response) => {
           // Check that the response is all good
-          // Reload the page so the user can see the new quote
           if (response.ok) {
             console.log(`changed devour to: ${newDevour}`);
             location.reload('/');
@@ -49,13 +48,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     createBurgerBtn.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Grabs the value of the textarea that goes by the name, "quote"
       const newBurger = {
         name: document.getElementById('ca').value.trim(),
         devour: document.getElementById('devoured').checked,
       };
 
-      // Send POST request to create a new quote
       fetch('/api/burgers', {
         method: 'POST',
         headers: {
@@ -63,7 +60,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
           'Content-Type': 'application/json',
         },
 
-        // make sure to serialize the JSON body
         body: JSON.stringify(newBurger),
       }).then(() => {
         // Empty the form

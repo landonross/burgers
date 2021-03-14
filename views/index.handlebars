@@ -1,25 +1,35 @@
-<h1>Burgers!</h1>
+<h1>Eat-Da-Burger!</h1>
 
-<h2>Burgers you want to eat:</h2>
+<div>
+<img src="https://lh3.googleusercontent.com/f-ESkMqYk1GN6V2_QLPeS7Qju-pKy_yg4aKRTEja_jS-NEJJG9vRAETeidlo9N-8x1DH7jEqu1XOYCswiFMo16A3QO1_SAAKLEcUa3z0g3dkkG-hIGLcD8-ueBmQQe_MJVL_khWdGRiaYEJSIZAaty9ah0xXkXoWYg4c4vJfGmO_e8WrPnMAN5-9L7QJpC-PIZ2TDXEmndz62vsy8HLgpTYd_8pE1YLhvpsS1xMUVKkUYk1thl_FwngK2QKNJezMtJkgRjNVT-6W-jqGuOh0RslAalq5MOWMpl6nbujDwBxzj8fFrAgb-b1jHrgLfSbbECsPjQIFR_CKMDTCyB559bgaABaKfVitoCdzD4K5y0N_iEWNWGL2aQwav0njEpARakXqgyBPd6vgvZNjRqlufAuxy2ybPxXPPMYxxvknNKI_dItnf9krak0Bf1A5f1yC8gn784x4j1QLtcD6RSYcNzNeGJ4FmcTYsFRo0BP3TYvw7ywnKnow7sKZbWIEZnJzO69lG-YfUhiBHwijz70_n1NWHI6JIVtrwc8cWdE3B6GMJJqAugvz4Kgvyj_im5X_Rb7fCjiMhZb1J_dUs_sEX3AGslRtmJPdiDvhs6phDUkKeTpnN8-BDKBLp9SEzbY66CzofBOELGkM0FI1FDEdXgxTJp9XO01ZlnM9HSXuqLuWFVEIsFSjvb50GBF4eP4k4P5-0FKyJ9ileWs80r_Xtbw=s512-no?authuser=0" alt="glowing burger" class="glowingBurger">
+</div>
 
-<ul>
+<div class="unEaten">
+
+<h2 style="font-size: 30px;">Burgers you want to eat:</h2>
+
+<ul style="font-size: 20px;">
   {{#each burgers}}
   {{#unless devour}}
   {{> burgers/burgers-block devour=true}}
   {{/unless}}
   {{/each}}
 </ul>
+</div>
 
-<h2>Burgers you have devoured:</h2>
+<div class="eaten">
+<h2 style="font-size: 30px;">Burgers you have devoured:</h2>
 
-<ul>
+<ul style="font-size: 20px;">
   {{#each burgers}}
   {{#if devour}}
   {{> burgers/burgers-block devour=false}}
   {{/if}}
   {{/each}}
 </ul>
+</div>
 
+<div class="add">
 <h2>Add a Burger</h2>
 <form id="create-form">
 
@@ -28,11 +38,12 @@
     <input type="text" id="ca" name="name">
   </div>
 
-  <div class="form-group">
+  {{!-- <div class="form-group">
     <label for="devoured">Devoured?</label><br>
     <input type="radio" name="sleepy" value="1" id="devoured" checked> Devoured!<br>
     <input type="radio" name="sleepy" value="0" id="notYet"> Not yet
-  </div>
+  </div> --}}
 
   <button type="submit">Add Burger</button>
 </form>
+</div>
