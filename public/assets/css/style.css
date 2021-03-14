@@ -60,3 +60,31 @@ h1 {
 .form-group {
   margin-bottom: 5px;
 }
+
+.change-devour {
+ background-color: white;
+ border-radius: 8px;
+ border: none;
+ margin: 1%;
+}
+
+.change-devour:hover {
+  background-color: rgb(253, 255, 144);
+  border-radius: 8px;
+  border: none;
+  margin: 1%;
+}
+
+.delete-burger {
+  background-color: white;
+  border-radius: 8px;
+  border: none;
+  margin: 1%;
+}
+
+.delete-burger:hover {
+  background-color: rgb(253, 255, 144);
+  border-radius: 8px;
+  border: none;
+  margin: 1%;
+}
