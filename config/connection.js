@@ -1,5 +1,8 @@
 // Set up MySQL connection.
 const mysql = require('mysql');
+const express = require('express');
+
+const app = express();
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -10,13 +13,16 @@ const connection = mysql.createConnection({
   database: 'burger_db',
 });
 
+const PORT = process.env.PORT || 3002;
+
 // Make connection.
 connection.connect((err) => {
   if (err) {
     console.error(`error connecting: ${err.stack}`);
     return;
   }
-  console.log(`connected as id ${connection.threadId}`);
+  app.listen(PORT, () => console.log(`App listening on PORT: ${PORT}`));
+  // console.log(`connected as id ${connection.threadId}`);
 });
 
 // Export connection for our ORM to use.
