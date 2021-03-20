@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL) {
     port: 3306,
     user: 'root',
   // NOTE: Be sure to add your MySQL password here!
-    password: 'password',
+    password: '',
     database: 'gyruwc8iocu6zxbz',
 });
 };
